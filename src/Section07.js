@@ -8,7 +8,7 @@ function Section07() {
       backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section07_bg.png'})`,
     }}
     >
-      <div className='flex items-start  justify-between pr-5 py-5 md:pr-14 md:py-14  gap-20'>
+      <div className='flex items-start  justify-between pr-5 py-5 md:pr-14 md:py-14 gap-10  md:gap-20'>
         <div className='w-7/12'>
           <img src={process.env.PUBLIC_URL+'/images/section07_p01.png'} alt="" className='w-full' data-aos="fade-up" data-aos-duration="500" data-aos-delay="500"/>
         </div>

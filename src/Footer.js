@@ -60,16 +60,16 @@ function Footer() {
   }
   return (
     <div
-      className='w-full  aspect-video bg-cover bg-center bg-no-repeat py-6 relative py-12'
+      className='w-full  aspect-video bg-cover bg-center bg-no-repeat py-3 relative md:py-12'
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL +'/images/footer_bg.png'})`,
       }}
     >
-      <div className='flex flex-col md:flex-row w-10/12 mx-auto gap-14 my-20 items-center'>
-        <div className='w-2/3 mx-auto' >
+      <div className='flex flex-col md:flex-row w-10/12 mx-auto gap-14 my-10 md:my-20 items-center'>
+        <div className='md:w-2/3 mx-auto' >
           <img src={process.env.PUBLIC_URL+'/images/footer_title.png'} alt="" />
           {/* 表單 */}
-          <div className='w-4/5 md:w-full mx-auto'>
+          <div className='md:w-4/5 md:w-full mx-auto'>
             <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-auto my-5  rel" data-aos="fade-up" data-aos-duration="1500" >
 
               <div className='w-full  my-3 '>
@@ -84,10 +84,38 @@ function Footer() {
                 <input type="mail" className="block  bg-white   w-full
                     px-3 py-2 " placeholder="電子信箱"   {...register("mail", { required: true})}/>
               </div>
+              <div className='flex gap-3'>
+                <div className='w-full  '>
+                  <select className="block  bg-white  w-full px-3 py-2 "  {...register("main_district", { required: true})} onChange={(e)=>{
+                    handleChange(e)
+                  }}>
+                    <option defaultValue value="">居住縣市</option>
+                    {
+                      taiwan_districts.map((item,index)=>{
+                        return(
+                          <option value={item.name} key={item.name}>{item.name}</option>
+                        )
+                      })
+                    }
+                  </select>
+                </div>
+                <div className='w-full  '>
+                  <select className="block  bg-white  w-full px-3 py-2  "  {...register("sub_district", { required: true})}>
+                    <option defaultValue value="">居住地區</option>
+                    {
+                      subDistricts.map((item,index)=>{
+                        return(
+                          <option value={item.name} key={item.name+index}>{item.name}</option>
+                        )
+                      })
+                    }
+                  </select>
+                </div>
+              </div>
 
               <input type="hidden" name="msgMailTitle" value={msgMailTitle}  {...register("msgMailTitle", { required: true})}/>
               <div className='text-[#5C2C1F] font-bold text-sm w-[90%] mx-auto'>
-                <div className=' flex mt-2 text-xs md:text-base items-center'>
+                <div className=' flex mt-2 text-xs md:text-base items-center justify-center'>
                   <input type="checkbox"  className='px-1 mr-1' id="checkit" name="checkit" defaultChecked {...register("checkit", { required: true})}/>
                   <div className='text-[#fff] ml-2   underline-offset-2 cursor-pointer' onClick={()=>setIsOpen(true)}> <span className='underline'>個人資料聲明事項</span>，我同意通過電話或郵件方式與我聯絡</div>
                 </div>
@@ -101,7 +129,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className='w-2/3 mx-auto my-20'>
+      <div className='w-1/2 mx-auto my-10 md:my-20'>
         <img src={process.env.PUBLIC_URL+'/images/footer_credit.png'} alt="" />
       </div>
       {/* Modal */}

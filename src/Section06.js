@@ -18,11 +18,11 @@ function Section06() {
       backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section06_bg.png'})`,
     }}
     >
-      <div className='flex items-start  justify-between pl-5 py-5 md:pl-14 md:py-14  gap-20'>
+      <div className='flex items-start  justify-between pl-5 py-5 md:pl-14 md:py-14 gap-2  md:gap-20'>
         <div className='w-4/12 pt-5 md:pt-16 '>
           <img src={process.env.PUBLIC_URL+'/images/section06_title.png'} alt="" className='w-full' data-aos="fade-up" data-aos-duration="500"/>
         </div>
-        <div className='w-[55%]  relative'>
+        <div className='w-[55%]  relative section06_swiper'>
           <Swiper
               spaceBetween={30}
               slidesPerView={1}
@@ -31,7 +31,7 @@ function Section06() {
                 clickable: true,
               }} 
               modules={[Pagination,Autoplay]}
-              autoplay={{delay:2000}}
+              // autoplay={{delay:2000}}
               centeredSlides={true}
               className='w-full'
             >

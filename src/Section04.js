@@ -19,14 +19,14 @@ function Section04() {
   ]
   return (
     <div
-      className='w-full  aspect-video bg-cover bg-center bg-no-repeat py-6 relative'
+      className='w-full  aspect-video bg-cover bg-center bg-no-repeat py-1 md:py-6 relative'
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section_bg.png'})`,
       }}
     >
-      <div className=' absolute -bottom-0 left-1/3 w-1/5 '><img src={process.env.PUBLIC_URL+'/images/section04_c01.png'} alt="" className='w-full' /></div>
+      <div className=' absolute -bottom-0 left-1/3 w-1/5 '><img src={process.env.PUBLIC_URL+'/images/section04_c01.png'} alt="" className='w-full' data-aos="fade" data-aos-duration="500" /></div>
       <div className='flex justify-between items-center gap-12 p-5 md:p-14'>
-        <div className='w-[40%]  relative'>
+        <div className='w-[40%]  relative '>
           <Swiper
               spaceBetween={30}
               slidesPerView={1}
@@ -37,7 +37,7 @@ function Section04() {
               modules={[Pagination,Autoplay]}
               autoplay={{delay:2000}}
               centeredSlides={true}
-              className='w-full'
+              className='w-full '
             >
               {
                 imgs.map((item,index)=>{

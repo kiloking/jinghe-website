@@ -3,7 +3,7 @@ import React from 'react'
 function Section03() {
   return (
     <div
-      className='w-full  aspect-video bg-cover bg-center bg-no-repeat py-6 relative'
+      className='w-full  aspect-video bg-cover bg-center bg-no-repeat py-1 md:py-6 relative'
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL +'/images/section_bg.png'})`,
       }}
